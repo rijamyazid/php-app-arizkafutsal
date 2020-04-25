@@ -52,6 +52,9 @@
                         case 'buat_akun':
                             include "../code/login/daftar.php";
                             break;
+                        case 'pesan':
+                            include "../code/pemesanan/pesan.php";
+                            break;
                         case 'beranda':
                             include "../code/login/login.php";
                             break;

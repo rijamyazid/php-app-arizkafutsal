@@ -1,3 +1,10 @@
+<?php
+    if(!isset($_SESSION['username'])){
+        echo "<p>Anda harus login terlebih dahulu, silahkan lakukan login</p>";
+        echo "<meta http-equiv='refresh' content='2;url=../notmember/index.php'>";
+    } else {
+?>
+
 <div class="psn">
     <div class="saldo">
         <label>SALDO ANDA :</label><br>
@@ -22,3 +29,7 @@
     </div>
 
 </div>
+
+<?php
+    }
+?>

@@ -7,7 +7,7 @@
 
 <html>
     <head>
-        <link rel="stylesheet" href="../Assets/css/styl.css">
+        <link rel="stylesheet" href="../Assets/css/style.css">
         <link rel="stylesheet" href="../Assets/css/log-daf.css">
         
     </head>
@@ -26,33 +26,34 @@
                                         <li><a href="?hal=jadwal_vinyl">Jadwal Vinyl</a></li>
                                     </ul>
                                 </div>
-                        <script
-                        src="https://code.jquery.com/jquery-3.4.1.js"></script>  
-                        <script type="text/javascript">
-                            $(document).ready(function(){
-                                $('.ini').click(function(){
-                                    $('#luu').toggleClass('active');
+                            <script
+                            src="https://code.jquery.com/jquery-3.4.1.js"></script>  
+                            <script type="text/javascript">
+                                $(document).ready(function(){
+                                    $('.ini').click(function(){
+                                        $('ul').toggleClass('active');
+                                    })
                                 })
-                            })
-                        </script>
+                            </script>
+                            <div><a href="#geografis">GALERI</a></div>
+                            <div><a href="#wisata">RIWAYAT TRANSAKSI</a></div>
                         
                     </nav>
                     <nav class="kanan">
                         <div class ="dropdown">
-                            <!-- <div><button>Menu</button></div> -->
-                            <div><a class="ini2" href="#">MENU</a></div>
-                                <ul id="luu1">
-                                    <li><a href="?hal=profile">Profile</a></li>
-                                    <li><a href="?hal=pemesanan">RIWAYAT TRANSAKSI</a></li>
-                                    <li><a href="?hal=logout">Logout</a></li>
-                                </ul>
+                            <div><button>Menu</button></div>
+                            <ul>
+                                <li><a href="?hal=profile">Profile</a></li>
+                                <li><a href="?hal=pemesanan">Riwayat Pmesanan</a></li>
+                                <li><a href="?hal=logout">Logout</a></li>
+                            </ul>
                         </div>
                         <script
                         src="https://code.jquery.com/jquery-3.4.1.js"></script>  
                         <script type="text/javascript">
                             $(document).ready(function(){
-                                $('.ini2').click(function(){
-                                    $('#luu1').toggleClass('active')
+                                $('button').click(function(){
+                                    $('ul').toggleClass('active')
                                 })
                             })
                         </script>
@@ -66,13 +67,10 @@
                     case 'beranda':
                         include "member.php";
                         break;
-                    case 'jadwal_sintesis':
-                        include "../code/jadwal/jadwal_sintesis.php";
-                        break;
                     case 'profile':
                         include "../code/profile.php";
                         break;
-                    case 'pesan':
+                    case 'pemesanan':
                         include "../code/pemesanan/pesan.php";
                         break;
                     case 'logout':
