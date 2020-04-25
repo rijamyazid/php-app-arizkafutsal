@@ -1,0 +1,340 @@
+*{
+    box-sizing: border-box;
+ }
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+ }
+ header {
+    /* padding: 20px; */
+    color: white;
+    display : inline;
+    /* width : 100%; */
+    /* position: fixed; */
+    /* background-color: #00a2c6; */
+ }
+ main{
+     min-height: 550px;
+ }
+ footer{
+    display: flex;
+    background : #434343;
+    justify-content: space-between;
+ }
+ .kiri a {
+    font-size: 18px;
+    font-weight: 400;
+    text-decoration: none;
+ }
+ .kiri a:hover {
+    font-weight: bold;
+ }
+ .kiri li {
+    display: inline;
+    list-style-type: none;
+    margin-right: 20px;
+    /* position: fixed; */
+ }
+ .kiri {
+    width :60%;
+    /* display : flex; */
+    background-color: #434343;
+    padding: 5px;
+    /* position: sticky;
+    top:0; */
+ }
+ .kiri div{
+    background:#434343;
+    width : 30%;
+    border-radius: 7px 5px 0 0;
+    text-align: center;
+ }
+ .kiri div a{
+    color:white;
+    text-decoration: none;
+    line-height: 60px;
+    display:block;
+}
+.kiri a {
+    font-size: 18px;
+    font-weight: 400;
+    text-decoration: none;
+    color: white;
+ }
+ .atas .kiri{
+    background :#434343;
+    width :50%;
+    display : flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+.atas .kiri div{
+    background:#434343;
+    width : 35%;
+    border-radius: 7px 5px 0 0;
+    text-align: center;
+}
+.atas .kiri2{
+    background :#a33b3b;
+    width :300%;
+    display : flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+.atas .kiri2 div{
+    background:#434343;
+    width : 25%;
+    border-radius: 7px 5px 0 0;
+    text-align: center;
+
+}
+.kiri2 div a, .kiri div a{
+    color:white;
+    text-decoration: none;
+    line-height: 60px;
+    display:block;
+}
+.atas .kiri div :hover{
+    background:#302f2f;
+    
+}
+.atas .kiri2 div :hover{
+    /* background:green; */
+    background:#302f2f; 
+}
+.atas .kiri .dropdown{
+    background:#434343;
+    width : 35%;
+    border-radius: 7px 5px 0 0;
+    text-align: center;
+}
+
+
+
+
+
+
+
+ .kanan{
+    width: 60%;
+    display: flex;
+    justify-content: flex-end;
+    text-align: center;
+    align-items: center;
+    position: sticky;
+    top : 0;
+    background: #434343;
+    /* color: white; */
+}
+.kanan div{
+    background:#818181;
+    border:1px solid white;
+    border-radius:5px;
+}
+button{
+    background:#434343;
+    /* width : 100%; */
+    /* border-radius: 20px; */
+    padding: 10px;
+    /* font-size: 40px; */
+    cursor: pointer;
+    display: block;
+    color: white;
+}
+.kanan .dropdown{
+    
+    display :flex;
+    justify-content: flex-end;
+    /* align-items: flex-end; */
+}
+.dropdown ul li a{
+    align-items: center;
+    display :block;
+    text-decoration: none;
+}
+.dropdown ul{
+    border:2px solid black;
+    background: #434343;
+    position: absolute;
+    padding : 0;
+    list-style:none;
+    text-align: center;
+    transform: perspective(1000px) rotatex(-90deg);
+}
+.dropdown ul li a:hover{
+    background:black;
+
+}
+ul.active{
+    transform: perspective(1000px) rotatex(0deg);
+}
+.kanan div a{
+    color:white;
+    text-decoration: none;
+    padding : 10px;
+    display:block;
+}
+/* .palingatas{
+    background: #434343;
+    height:50px;
+} */
+.atas {
+    /* display: inline; */
+    position: sticky;
+    top : 0;
+    display: flex;
+    justify-content: space-between;
+    background:#434343;
+}
+
+
+
+
+.bawahkiri{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.bawahkiri img{
+    width:111;
+}
+.bawahkiri a{
+    text-decoration: none;
+    color:white;
+}
+
+
+
+
+
+.jdwl{
+    margin : 30px auto;
+    width : 1250px;
+}
+table{
+    text-align: center;
+    /* align-self: center; */
+}
+.atastab{
+    display: flex;
+    justify-content:space-between ;
+    margin : 0 0 10px 0;
+}
+.tgl{
+    /* display:block; */
+    font-weight: bolder;
+}
+.atastab div label{
+    font-weight: bold;
+}
+.tombolpesan{
+    margin:10px 0 0 1160px;
+    padding : 5px;
+    background: rgb(226, 223, 223);
+    text-align: center;
+    width: 90px;
+    cursor:pointer;
+    border : 1px solid black;
+}
+.tombolpesan a, .carpes a{
+    display:block;
+    text-decoration: none;
+    color : black;
+}
+.tombolpesan:hover{
+    font-weight: bolder;
+    background:rgb(196, 192, 192) ;
+}
+.carpes:hover{
+    font-weight: bolder;
+}
+
+
+
+
+.psn{
+    margin : 30px auto;
+    width : 1050px;
+    
+    
+}
+.saldo{
+    
+    margin: 0 0 0 950px;
+}
+.kotakpesan{
+    background: rgb(223, 218, 218);
+    padding : 20px;
+    height: 400px;
+}
+.kotakpesan pre{
+    
+    padding: 15px;
+    font-size: 15px;
+}
+/* .tlpesan{
+
+} */
+.kotakpesan div{
+    margin : 0 0 0 170px;
+}
+.ijo{
+ background: greenyellow;
+ font-size: 15px;
+}
+.merah{
+background: red;
+font-size: 15px;
+}
+
+
+
+
+
+.Prof{
+    padding: 20px;
+    width: 1200px;
+    margin: 50px 0 0 50px;
+    font-size: 25px;
+}
+.Prof div img{
+    width: 150px;
+    height: 150px;  
+}
+.head{
+    width : 950px;
+    display: flex;
+    justify-content: space-between;
+}
+.ID{
+    /* width:200px; */
+    display: flex;   
+    /* justify-content: space-between; */   
+}
+.ID pre{
+    margin: 20px 0 0 -320px;
+}
+.Prof a{
+    margin : 0 0 0 600px;
+    padding:0;
+    display: block;
+    cursor: pointer;
+    text-decoration: none;
+    color:black;
+    background: rgb(221, 221, 221);
+    width : 100px;
+    text-align: center;
+
+}
+.Prof a:hover{
+    font-weight: bolder;
+}
+.datdir{
+    margin: 0;
+    padding:0;
+    background: rgb(206, 206, 206);
+    min-height: 150px;
+}
+
