@@ -50,7 +50,7 @@
                                 if($data['id_jadwal'] == $dataJadwal['id_jadwal']){
                                     echo '<td>Dipesan</td>';
                                 } else {
-                                    echo '<td><a href="?hal=pesan">Pesan</a></td>';
+                                    echo '<td><a href="?hal=pesan&tanggal='."$_POST[tanggal]".'&idLapang=1&idJadwal='."$dataJadwal[id_jadwal]".'">Pesan</a></td>';
                                 }
                             }
                         ?>
@@ -66,7 +66,7 @@
                         <td><?= $dataJadwal['harga'] ?></td>
                         <td>TERSEDIA</td>
                         <td>-</td>
-                        <td><a href="?hal=pesan">Pesan</a></td>
+                        <td><a href="?hal=pesan&tanggal=<?= $_POST['tanggal'] ?>&idLapang=1&idJadwal=<?= $dataJadwal['id_jadwal'] ?>">Pesan</a></td>
                     </tr>
                 <?php
                         }
@@ -96,7 +96,7 @@
                                 if($data['id_jadwal'] == $dataJadwal['id_jadwal']){
                                     echo '<td>Dipesan</td>';
                                 } else {
-                                    echo '<td><a href="?hal=pesan">Pesan</a></td>';
+                                    echo '<td><a href="?hal=pesan&tanggal='.date("Y/m/d").'&idLapang=1&idJadwal='."$dataJadwal[id_jadwal]".'">Pesan</a></td>';
                                 }
                             }
                         ?>

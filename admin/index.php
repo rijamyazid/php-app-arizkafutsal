@@ -1,6 +1,6 @@
 <html>
     <head>
-        <link rel="stylesheet" href="../Assets/css/style.css">
+        <link rel="stylesheet" href="../Assets/css/styl.css">
         <link rel="stylesheet" href="../Assets/css/lgdf.css">
         
     </head>

@@ -5,7 +5,7 @@
 
 <html>
     <head>
-        <link rel="stylesheet" href="../Assets/css/style.css">
+        <link rel="stylesheet" href="../Assets/css/styl.css">
         <link rel="stylesheet" href="../Assets/css/lgdf.css">
         
     </head>
@@ -40,7 +40,9 @@
            <?php
             if(isset($_GET['hal'])){
                 if(isset($_SESSION['username'])){
-                    include "../member/member.php";
+                    session_destroy();
+                    echo "<p>Anda belum melakukan logout, logout secara otomatis, silahkan melakukan login lagi</p>";
+                    echo "<meta http-equiv='refresh' content='2;url=../notmember/index.php'>";
                 } else {
                     switch ($_GET['hal']) {
                         case 'jadwal_sintesis':
