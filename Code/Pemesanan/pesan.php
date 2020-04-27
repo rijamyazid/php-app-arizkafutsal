@@ -39,8 +39,8 @@
     }
 
     function reverseDate($date) {
-        $tempDate = explode('/', $date);
-        return $tempDate[2]."/".$tempDate[1]."/".$tempDate[0];
+        $tempDate = explode('-', $date);
+        return $tempDate[2]."-".$tempDate[1]."-".$tempDate[0];
     }
 
     function convertIdToWaktu($con, $idJadwal){
