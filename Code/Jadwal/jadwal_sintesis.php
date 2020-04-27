@@ -39,10 +39,10 @@
                 ?>
                     <tr>
                         <td><?= $dataJadwal['waktu'] ?></td>
-                        <td><?= $dataJadwal['harga'] ?></td>
+                        <td>Rp. <?= createReadableCurrency($dataJadwal['harga']) ?></td>
                         <?php
                             foreach($result as $data) {
-                                if($data['id_jadwal'] == $dataJadwal['id_jadwal']){
+                                if($data['id_lapang'] == 1 && $data['id_jadwal'] == $dataJadwal['id_jadwal']){
                                     $dipesan = true;
                                     $username = $data['username'];
                                     break;
@@ -68,7 +68,7 @@
                 ?>
                             <tr>
                                 <td><?= $dataJadwal['waktu'] ?></td>
-                                <td><?= $dataJadwal['harga'] ?></td>
+                                <td>Rp. <?= createReadableCurrency($dataJadwal['harga']) ?></td>
                                 <td>TERSEDIA</td>
                                 <td>-</td>
                                 <td><a href="?hal=pesan&tanggal=<?= $_POST['tanggal'] ?>&idLapang=1&idJadwal=<?= $dataJadwal['id_jadwal'] ?>">Pesan</a></td>
@@ -90,10 +90,10 @@
                 ?>
                     <tr>
                         <td><?= $dataJadwal['waktu'] ?></td>
-                        <td><?= $dataJadwal['harga'] ?></td>
+                        <td>Rp. <?= createReadableCurrency($dataJadwal['harga']) ?></td>
                         <?php
                             foreach($result as $data) {
-                                if($data['id_jadwal'] == $dataJadwal['id_jadwal']){
+                                if($data['id_lapang'] == 1 && $data['id_jadwal'] == $dataJadwal['id_jadwal']){
                                     $dipesan = true;
                                     $username = $data['username'];
                                     break;
@@ -119,7 +119,7 @@
                         ?>
                             <tr>
                                 <td><?= $dataJadwal['waktu'] ?></td>
-                                <td><?= $dataJadwal['harga'] ?></td>
+                                <td>Rp. <?= createReadableCurrency($dataJadwal['harga']) ?></td>
                                 <td>TERSEDIA</td>
                                 <td>-</td>
                                 <td><a href="?hal=pesan&tanggal=<?= date("Y-m-d") ?>&idLapang=1&idJadwal=<?= $dataJadwal['id_jadwal'] ?>">Pesan</a></td>

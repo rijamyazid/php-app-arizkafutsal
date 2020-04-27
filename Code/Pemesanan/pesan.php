@@ -11,13 +11,13 @@
 <div class="psn">
     <div class="saldo">
         <label>SALDO ANDA :</label><br>
-        <label>Rp. <?= $data['saldo'] ?></label>
+        <label>Rp. <?= createReadableCurrency($data['saldo']) ?></label>
     </div>
     <div class="kotakpesan">
         <h3>KONFIRMASI PEMESANAN</h3>
         <pre>
             Apakah Anda ingin memesan lapangan pada waktu dibawah ?
-            Lapangan    : <?php if($_GET['idLapang']==1) echo "Syntesis"; else echo "Vinyl;" ?><br>
+            Lapangan    : <?php if($_GET['idLapang']==1) echo "Syntesis"; else echo "Vinyl"; ?><br>
             Hari/Tanggal: <?= reverseDate($_GET['tanggal']) ?><br>
             Waktu       : <?= getWaktuByIdWaktu($con, $_GET['idJadwal']) ?><br>
             Pembayaran  : Rp. 100.000
