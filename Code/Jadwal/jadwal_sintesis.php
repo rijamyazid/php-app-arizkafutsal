@@ -1,5 +1,5 @@
 <?php
-    $tanggal = "";
+    $dipesan = false;
 ?>
         <div class="jdwl">
             <div class="atastab">
@@ -40,18 +40,28 @@
                         <?php
                             foreach($result as $data) {
                                 if($data['id_jadwal'] == $dataJadwal['id_jadwal']){
-                                    echo '<td style="background:red; color:white">DIPESAN</td>';
-                                } else {
-                                    echo '<td style=>TERSEDIA</td>';
+                                    $dipesan = true;
+                                    break;
                                 }
+                            }
+                            if($dipesan){
+                                echo '<td style="background:red; color:white">DIPESAN</td>';
+                                $dipesan = false;
+                            } else {
+                                echo '<td style=>TERSEDIA</td>';
                             }
                             echo '<td>-</td>';
                             foreach($result as $data) {
                                 if($data['id_jadwal'] == $dataJadwal['id_jadwal']){
-                                    echo '<td>Dipesan</td>';
-                                } else {
-                                    echo '<td><a href="?hal=pesan&tanggal='."$_POST[tanggal]".'&idLapang=1&idJadwal='."$dataJadwal[id_jadwal]".'">Pesan</a></td>';
+                                    $dipesan = true;
+                                    break;
                                 }
+                            }
+                            if($dipesan){
+                                echo '<td>Dipesan</td>';
+                                $dipesan = false;
+                            } else {
+                                echo '<td><a href="?hal=pesan&tanggal='.$_POST['tanggal'].'&idLapang=1&idJadwal='."$dataJadwal[id_jadwal]".'">Pesan</a></td>';
                             }
                         ?>
                         
@@ -87,18 +97,28 @@
                         <?php
                             foreach($result as $data) {
                                 if($data['id_jadwal'] == $dataJadwal['id_jadwal']){
-                                    echo '<td style="background:red; color:white">DIPESAN</td>';
-                                } else {
-                                    echo '<td style=>TERSEDIA</td>';
+                                    $dipesan = true;
+                                    break;
                                 }
+                            }
+                            if($dipesan){
+                                echo '<td style="background:red; color:white">DIPESAN</td>';
+                                $dipesan = false;
+                            } else {
+                                echo '<td style=>TERSEDIA</td>';
                             }
                             echo '<td>-</td>';
                             foreach($result as $data) {
                                 if($data['id_jadwal'] == $dataJadwal['id_jadwal']){
-                                    echo '<td>Dipesan</td>';
-                                } else {
-                                    echo '<td><a href="?hal=pesan&tanggal='.date("Y-m-d").'&idLapang=1&idJadwal='."$dataJadwal[id_jadwal]".'">Pesan</a></td>';
+                                    $dipesan = true;
+                                    break;
                                 }
+                            }
+                            if($dipesan){
+                                echo '<td>Dipesan</td>';
+                                $dipesan = false;
+                            } else {
+                                echo '<td><a href="?hal=pesan&tanggal='.date("Y-m-d").'&idLapang=1&idJadwal='."$dataJadwal[id_jadwal]".'">Pesan</a></td>';
                             }
                         ?>
                     </tr>
