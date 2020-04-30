@@ -3,6 +3,7 @@
     ob_start();
 
     include "../code/koneksi.php";
+    include "../code/universal_functions.php";
 ?>
 
 <html>
@@ -69,6 +70,9 @@
                         break;
                     case 'jadwal_sintesis':
                         include "../code/jadwal/jadwal_sintesis.php";
+                        break;
+                    case 'jadwal_vinyl':
+                        include "../code/jadwal/jadwal_vinyl.php";
                         break;
                     case 'profile':
                         include "../code/profile.php";
