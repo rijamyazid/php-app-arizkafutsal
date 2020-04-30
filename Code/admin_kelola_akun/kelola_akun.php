@@ -1,9 +1,5 @@
 <?php
     $users = getAllUsers($con);
-
-    if($_GET['hal'] == 'kelola_akun_hapus'){
-        echo "Kelola akun hapus";
-    }
 ?>
 
 <h3>Kelola Akun</h3>
