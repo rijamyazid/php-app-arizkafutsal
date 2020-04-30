@@ -52,11 +52,11 @@
 
     function issetForm($con, $userData){
         if(isset($_POST['setuju'])){
-            $query = "INSERT INTO transaksi (tanggal, id_jadwal, username, id_lapang, total_bayar) VALUES 
-                    ('$_GET[tanggal]', '$_GET[idJadwal]', '$_SESSION[username]', '$_GET[idLapang]', '100000')";
-            $result = mysqli_query($con, $query);
-
             if($userData['saldo'] >= 100000){
+                $query = "INSERT INTO transaksi (tanggal, id_jadwal, username, id_lapang, total_bayar) VALUES 
+                    ('$_GET[tanggal]', '$_GET[idJadwal]', '$_SESSION[username]', '$_GET[idLapang]', '100000')";
+                $result = mysqli_query($con, $query);
+                
                 $saldoReduced = $userData['saldo'] - 100000;
                 $query = "UPDATE user SET saldo='$saldoReduced' WHERE username='$_SESSION[username]'";
                 $result = mysqli_query($con, $query);

@@ -19,7 +19,7 @@
                             <div><a href="?hal=admin_beranda">BERANDA</a></div>
                             <div><a href="?hal=kelola_akun">KELOLA AKUN</a></div>
                             <div><a href="#wisata">KELOLA JADWAL</a></div>
-                            <div><a href="#wisata">KELOLA TRANSAKSI</a></div>
+                            <div><a href="?hal=kelola_transaksi">KELOLA TRANSAKSI</a></div>
                             <div><a href="#wisata">KELOLA PEMESANAN</a></div>
                     </nav>
                     <nav class="kanan">
@@ -61,6 +61,12 @@
                         break;
                     case 'kelola_akun_hapus':
                         include "../code/admin_kelola_akun/kelola_akun_hapus.php";
+                        break;
+                    case 'kelola_transaksi':
+                        include "../code/admin_kelola_transaksi/kelola_transaksi.php";
+                        break;
+                    case 'kelola_transaksi_tambah':
+                        include "../code/admin_kelola_transaksi/kelola_transaksi_tambah.php";
                         break;
                     case 'admin_logout':
                         session_destroy();
