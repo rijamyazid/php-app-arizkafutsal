@@ -210,9 +210,12 @@ ul.active{
 
 
 .jdwl{
-    margin : 30px auto;
+    margin : 50px auto;
     width : 1250px;
 }
+/* .jdwl h1{
+    margin : 100px auto;
+} */
 table{
     text-align: center;
     /* align-self: center; */

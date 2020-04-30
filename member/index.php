@@ -61,6 +61,7 @@
         </header>
         <main>
            <?php
+          
             if(isset($_GET['hal'])){
                 switch ($_GET['hal']) {
                     case 'beranda':
