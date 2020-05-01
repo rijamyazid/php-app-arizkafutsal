@@ -3,15 +3,13 @@
         echo "<p>Anda harus login terlebih dahulu, silahkan lakukan login</p>";
         echo "<meta http-equiv='refresh' content='2;url=../notmember/index.php'>";
     } else {
-        $query = "SELECT * FROM user WHERE username='$_SESSION[username]'";
-        $result = mysqli_query($con, $query);
-        $data = mysqli_fetch_array($result);
+        $user = getUserByUsername($con, $_SESSION['username']);
 ?>
 
 <div class="psn">
     <div class="saldo">
         <label>SALDO ANDA :</label><br>
-        <label>Rp. <?= createReadableCurrency($data['saldo']) ?></label>
+        <label><?= toCurrency($user['saldo']) ?></label>
     </div>
     <div class="kotakpesan">
         <h3>KONFIRMASI PEMESANAN</h3>
@@ -19,7 +17,7 @@
             Apakah Anda ingin memesan lapangan pada waktu dibawah ?
             Lapangan    : <?php if($_GET['idLapang']==1) echo "Syntesis"; else echo "Vinyl"; ?><br>
             Hari/Tanggal: <?= reverseDate($_GET['tanggal']) ?><br>
-            Waktu       : <?= getWaktuByIdWaktu($con, $_GET['idJadwal']) ?><br>
+            Waktu       : <?= getJadwalById($con, $_GET['idJadwal'])['waktu'] ?><br>
             Pembayaran  : Rp. 100.000
         </pre>
         <div>
@@ -28,7 +26,7 @@
             <input type="submit" class="merah" name="batal" value="batal">
         </form>
         <?php
-            issetForm($con, $data);
+            issetForm($con, $user);
         ?>
         </div
     </div>
@@ -36,13 +34,6 @@
 </div>
 
 <?php
-    }
-
-    function getWaktuByIdWaktu($con, $idJadwal){
-        $query = "SELECT * FROM jadwal WHERE id_jadwal='$idJadwal'";
-        $result = mysqli_query($con, $query);
-        $data = mysqli_fetch_array($result);
-        return $data['waktu'];
     }
 
     function issetForm($con, $userData){

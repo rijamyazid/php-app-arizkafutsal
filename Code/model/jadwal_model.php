@@ -5,7 +5,7 @@
     }
 
     function getJadwalById($con, $id){
-        $query = "SELECT * FROM jadwal WHERE id='$id'";
+        $query = "SELECT * FROM jadwal WHERE id_jadwal='$id'";
         return mysqli_fetch_array(mysqli_query($con, $query));
     }
 ?>

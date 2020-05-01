@@ -20,7 +20,7 @@
             echo    '<td>'.$user['nama'].'</td>';
             echo    '<td>'.$user['no_hp'].'</td>';
             echo    '<td>'.$user['email'].'</td>';
-            echo    '<td>Rp. '.createReadableCurrency($user['saldo']).'</td>';
+            echo    '<td>'.toCurrency($user['saldo']).'</td>';
             echo    '<td>
                         <a href="?hal=kelola_akun_edit&username='.$user['username'].'">Ubah</a>
                         <a href="?hal=kelola_akun_hapus&username='.$user['username'].'">Hapus</a>

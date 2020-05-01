@@ -12,7 +12,7 @@
 <div class="psn">
     <div class="saldo">
         <label>SALDO ANDA :</label><br>
-        <label>Rp.<?= createReadableCurrency($user['saldo']) ?></label>
+        <label><?= toCurrency($user['saldo']) ?></label>
     </div>
     <div class="kotakpesan">
         <h3>KONFIRMASI PEMBATALAN</h3>

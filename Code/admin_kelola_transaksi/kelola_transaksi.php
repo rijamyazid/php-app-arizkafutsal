@@ -22,7 +22,7 @@
             echo    '<td>'.$transaksi['waktu'].'</td>';
             echo    '<td>'.$transaksi['id_lapang'].'</td>';
             echo    '<td>'.$transaksi['nama'].'</td>';
-            echo    '<td>Rp. '.createReadableCurrency($transaksi['total_bayar']).'</td>';
+            echo    '<td>'.toCurrency($transaksi['total_bayar']).'</td>';
             echo    '<td>
                         <a href="?hal=kelola_akun_edit&username='.$transaksi['id_transaksi'].'">Ubah</a>
                     </td>';

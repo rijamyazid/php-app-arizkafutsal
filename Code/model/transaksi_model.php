@@ -30,6 +30,16 @@
         return mysqli_query($con, $query);
     }
 
+    function getTransactionsByDate($con, $tanggal){
+        $query = "SELECT * FROM transaksi 
+                LEFT JOIN user
+                ON transaksi.username = user.username
+                LEFT JOIN jadwal
+                ON transaksi.id_jadwal = jadwal.id_jadwal
+                WHERE transaksi.tanggal = '$tanggal'";
+        return mysqli_query($con, $query);
+    }
+
     function insertTransaction($con, $tanggal, $id_jadwal, $username, $id_lapang, $total_bayar){
         $query = "INSERT INTO transaksi (tanggal, id_jadwal, username, id_lapang, total_bayar) 
                 VALUES ('$tanggal','$id_jadwal','$username','$id_lapang','$total_bayar')";
