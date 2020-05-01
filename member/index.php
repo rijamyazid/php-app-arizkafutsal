@@ -3,6 +3,7 @@
     ob_start();
 
     include "../code/koneksi.php";
+    include "../code/model/all_model.php";
     include "../code/universal_functions.php";
 ?>
 
@@ -44,7 +45,7 @@
                             <div><a class="ini2" href="#">MENU</a></div>
                                 <ul id="luu1">
                                     <li><a href="?hal=profile">Profile</a></li>
-                                    <li><a href="?hal=pemesanan">RIWAYAT TRANSAKSI</a></li>
+                                    <li><a href="?hal=riwayat_transaksi">RIWAYAT TRANSAKSI</a></li>
                                     <li><a href="?hal=logout">Logout</a></li>
                                 </ul>
                         </div>
@@ -79,6 +80,12 @@
                         break;
                     case 'pesan':
                         include "../code/pemesanan/pesan.php";
+                        break;
+                    case 'riwayat_transaksi':
+                        include "../code/customer_riwayat_transaksi/riwayat_transaksi.php";
+                        break;
+                    case 'riwayat_transaksi_batal':
+                        include "../code/customer_riwayat_transaksi/riwayat_transaksi_batal.php";
                         break;
                     case 'logout':
                         session_destroy();

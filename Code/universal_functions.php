@@ -19,4 +19,31 @@
                 break;
         }
     }
+
+    function reverseDate($date) {
+        $tempDate = explode('-', $date);
+        return $tempDate[2]."-".$tempDate[1]."-".$tempDate[0];
+    }
+
+    function isDateExpired($date, $time){
+        $arr = explode('-', $date);
+        $arr2 = explode('-', date("Y-m-d"));
+        if($arr[0] >= $arr2[0]){
+            if($arr[1] >= $arr2[1]){
+                if($arr[2] >= $arr2[2]){
+                    return isTimeExpired($time);
+                }
+            }
+        }
+        return true;
+    }
+
+    function isTimeExpired($time){
+        $arr = explode(':', $time);
+        $arr2 = explode(':', date("H:i:s"));
+        if($arr[0] > $arr2[0]){
+            return false;
+        }
+        return true;
+    }
 ?>

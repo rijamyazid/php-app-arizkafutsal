@@ -38,11 +38,6 @@
 <?php
     }
 
-    function reverseDate($date) {
-        $tempDate = explode('-', $date);
-        return $tempDate[2]."-".$tempDate[1]."-".$tempDate[0];
-    }
-
     function getWaktuByIdWaktu($con, $idJadwal){
         $query = "SELECT * FROM jadwal WHERE id_jadwal='$idJadwal'";
         $result = mysqli_query($con, $query);
