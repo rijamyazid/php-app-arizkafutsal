@@ -52,6 +52,12 @@
                     case 'kelola_transaksi_tambah':
                         include "../code/admin_kelola_transaksi/kelola_transaksi_tambah.php";
                         break;
+                    case 'kelola_transaksi_edit':
+                        include "../code/admin_kelola_transaksi/kelola_transaksi_edit.php";
+                        break;
+                    case 'kelola_transaksi_hapus':
+                        include "../code/admin_kelola_transaksi/kelola_transaksi_hapus.php";
+                        break;
                     case 'kelola_jadwal_sintesis':
                         include "../code/admin_kelola_jadwal/kelola_jadwal_sintesis.php";
                         break;

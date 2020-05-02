@@ -24,7 +24,8 @@
             echo    '<td>'.$transaksi['nama'].'</td>';
             echo    '<td>'.toCurrency($transaksi['total_bayar']).'</td>';
             echo    '<td>
-                        <a href="?hal=kelola_akun_edit&username='.$transaksi['id_transaksi'].'">Ubah</a>
+                        <a href="?hal=kelola_transaksi_edit&id='.$transaksi['id_transaksi'].'&username='.$transaksi['id_transaksi'].'">Ubah</a>
+                        <a href="?hal=kelola_transaksi_hapus&id='.$transaksi['id_transaksi'].'">Hapus</a>
                     </td>';
             echo '</tr>';
         }

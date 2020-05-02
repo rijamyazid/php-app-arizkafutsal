@@ -7,7 +7,7 @@
 <h3>Edit Transaksi</h3>
 <form action="" method="POST">
     <label for="tanggal">Tanggal</label><br>
-    <input type="date" name="tanggal" id="tanggal"><br>
+    <input type="date" name="tanggal" id="tanggal" value="<?= $transaksi['tanggal'] ?>"><br>
     <label for="waktu">Waktu</label><br>
     <select name="waktu" id="waktu">
         <option value="">-Pilih Waktu-</option>
@@ -22,22 +22,24 @@
     <label for="jl">Jenis Lapang</label><br>
     <select name="jl" id="jl">
         <option value="">-Pilih Lapang-</option>
-        <option value="1" <?php if($transaksi['id_lapang'] == 1) echo selected; ?>>Sintesis</option>
-        <option value="2" <?php if($transaksi['id_lapang'] == 2) echo selected; ?>>Vinyl</option>
+        <option value="1" <?php if($transaksi['id_lapang'] == 1) echo "selected"; ?>>Sintesis</option>
+        <option value="2" <?php if($transaksi['id_lapang'] == 2) echo "selected"; ?>>Vinyl</option>
     </select><br>
     <label for="nama">Nama Pemesan</label><br>
     <select name="nama" id="nama">
         <option value="">-Pilih User-</option>
         <?php
             foreach ($users as $user) {
-                echo "<option value='$user[username]'>$user[nama]</option>";
+                echo "<option value='$user[username]' ";
+                if($user['username'] == $transaksi['username']) echo " selected";
+                echo ">$user[nama]</option>";
             }
         ?>
     </select><br>
     <label for="tb">Total Biaya</label><br>
     <select name="tb" id="tb">
         <option value="">-Pilih Pembayaran-</option>
-        <option value="100000">Rp. 100.000</option>
+        <option value="100000" selected>Rp. 100.000</option>
     </select><br>
     <input type="submit" name="submit" value="Pesan">
 </form>

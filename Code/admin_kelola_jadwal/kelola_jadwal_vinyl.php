@@ -51,7 +51,7 @@
                             if($dipesan){
                                 echo '<td style="background:red; color:white">DIPESAN</td>';
                                 echo '<td>Pemesan : '.getUserByUsername($con, $username)['nama'].'</td>';
-                                echo '<td><a href="?hal=kelola_jadwal_hapus&id='.$idTransaction.'&idLapang=1">Hapus</a></td>';
+                                echo '<td><a href="?hal=kelola_transaksi_hapus&id='.$idTransaction.'&idLapang=1">Hapus</a></td>';
                                 $dipesan = false;
                             } else {
                                 echo '<td style=>TERSEDIA</td>';

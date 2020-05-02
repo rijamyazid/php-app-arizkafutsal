@@ -4,7 +4,7 @@
         return mysqli_query($con, $query);
     }
 
-    function getLapangById($id){
+    function getLapangById($con, $id){
         $query = "SELECT * FROM lapangan WHERE id_lapang=$id";
         return mysqli_fetch_array(mysqli_query($con, $query));
     }
