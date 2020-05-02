@@ -59,7 +59,7 @@
                                 if(isDateExpired($date, $jadwal['waktu'])){
                                     echo '<td>Expired</td>';
                                 } else {
-                                    echo '<td><a href="?hal=pesan&tanggal='.$date.'&idLapang=1&idJadwal='.$jadwal['id_jadwal'].'">Tambah</a></td>';
+                                    echo '<td><a href="?hal=kelola_transaksi_tambah&tanggal='.$date.'&idLapang=1&idJadwal='.$jadwal['id_jadwal'].'">Tambah</a></td>';
                                 }
                             }
                             echo '</tr>';

@@ -40,6 +40,16 @@
         return mysqli_query($con, $query);
     }
 
+    function getTransactionsByDateTimeAndLapang($con, $tanggal, $waktu, $lapang){
+        $query = "SELECT * FROM transaksi 
+                LEFT JOIN user
+                ON transaksi.username = user.username
+                LEFT JOIN jadwal
+                ON transaksi.id_jadwal = jadwal.id_jadwal
+                WHERE transaksi.tanggal = '$tanggal' AND transaksi.id_jadwal = '$waktu' AND transaksi.id_lapang = $lapang";
+        return mysqli_fetch_array(mysqli_query($con, $query));
+    }
+
     function insertTransaction($con, $tanggal, $id_jadwal, $username, $id_lapang, $total_bayar){
         $query = "INSERT INTO transaksi (tanggal, id_jadwal, username, id_lapang, total_bayar) 
                 VALUES ('$tanggal','$id_jadwal','$username','$id_lapang','$total_bayar')";
