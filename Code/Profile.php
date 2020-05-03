@@ -21,7 +21,7 @@
                 <div>
                     <pre>
                         SALDO ANDA : 
-                        Rp. <label><?= createReadAbleCurrency($data['saldo']) ?></label>
+                        <label><?= toCurrency($data['saldo']) ?></label>
                     </pre>
                 </div>
             </div>

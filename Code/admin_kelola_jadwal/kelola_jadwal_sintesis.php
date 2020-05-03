@@ -1,5 +1,6 @@
 <?php
     $jadwals = getAllJadwal($con);
+    $idTransaction = "";
     $dipesan = false;
     $date = date("Y-m-d");
 
@@ -31,7 +32,7 @@
                     <th>Harga</th>
                     <th>Status</th>
                     <th>Keterangan</th>
-                    <th>Pesan</th>
+                    <th>Pilihan</th>
                 </tr>
                 <?php
                     if(mysqli_num_rows($transactions) > 0){ // Jika ditemukan pemesanan pada tanggal yang dicari
@@ -43,13 +44,14 @@
                                 if($transaction['id_lapang'] == 1 && $jadwal['id_jadwal'] == $transaction['id_jadwal']){
                                     $dipesan = true;
                                     $username = $transaction['username'];
+                                    $idTransaction = $transaction['id_transaksi'];
                                     break;
                                 }
                             }
                             if($dipesan){
                                 echo '<td style="background:red; color:white">DIPESAN</td>';
                                 echo '<td>Pemesan : '.getUserByUsername($con, $username)['nama'].'</td>';
-                                echo '<td>Dipesan</td>';
+                                echo '<td><a href="?hal=kelola_transaksi_hapus&id='.$idTransaction.'&idLapang=1">Hapus</a></td>';
                                 $dipesan = false;
                             } else {
                                 echo '<td style=>TERSEDIA</td>';
@@ -57,7 +59,7 @@
                                 if(isDateExpired($date, $jadwal['waktu'])){
                                     echo '<td>Expired</td>';
                                 } else {
-                                    echo '<td><a href="?hal=pesan&tanggal='.$date.'&idLapang=1&idJadwal='.$jadwal['id_jadwal'].'">Pesan</a></td>';
+                                    echo '<td><a href="?hal=kelola_transaksi_tambah&tanggal='.$date.'&idLapang=1&idJadwal='.$jadwal['id_jadwal'].'">Tambah</a></td>';
                                 }
                             }
                             echo '</tr>';
@@ -72,7 +74,7 @@
                             if(isDateExpired($date, $jadwal['waktu'])){
                                 echo '<td>Expired</td>';
                             } else {
-                                echo '<td><a href="?hal=pesan&tanggal='.$date.'&idLapang=1&idJadwal='.$jadwal['id_jadwal'].'">Pesan</a></td>';
+                                echo '<td><a href="?hal=kelola_transaksi_tambah&tanggal='.$date.'&idLapang=1&idJadwal='.$jadwal['id_jadwal'].'">Tambah</a></td>';
                             }
                             echo '</tr>';
                         }

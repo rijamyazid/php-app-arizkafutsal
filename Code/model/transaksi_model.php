@@ -19,6 +19,37 @@
         return mysqli_fetch_array(mysqli_query($con, $query));
     }
 
+    function getTransactionsByUsername($con, $username){
+        $query = "SELECT * FROM transaksi 
+                LEFT JOIN user
+                ON transaksi.username = user.username
+                LEFT JOIN jadwal
+                ON transaksi.id_jadwal = jadwal.id_jadwal
+                WHERE transaksi.username = '$username'
+                ORDER BY id_transaksi DESC";
+        return mysqli_query($con, $query);
+    }
+
+    function getTransactionsByDate($con, $tanggal){
+        $query = "SELECT * FROM transaksi 
+                LEFT JOIN user
+                ON transaksi.username = user.username
+                LEFT JOIN jadwal
+                ON transaksi.id_jadwal = jadwal.id_jadwal
+                WHERE transaksi.tanggal = '$tanggal'";
+        return mysqli_query($con, $query);
+    }
+
+    function getTransactionsByDateTimeAndLapang($con, $tanggal, $waktu, $lapang){
+        $query = "SELECT * FROM transaksi 
+                LEFT JOIN user
+                ON transaksi.username = user.username
+                LEFT JOIN jadwal
+                ON transaksi.id_jadwal = jadwal.id_jadwal
+                WHERE transaksi.tanggal = '$tanggal' AND transaksi.id_jadwal = '$waktu' AND transaksi.id_lapang = $lapang";
+        return mysqli_fetch_array(mysqli_query($con, $query));
+    }
+
     function insertTransaction($con, $tanggal, $id_jadwal, $username, $id_lapang, $total_bayar){
         $query = "INSERT INTO transaksi (tanggal, id_jadwal, username, id_lapang, total_bayar) 
                 VALUES ('$tanggal','$id_jadwal','$username','$id_lapang','$total_bayar')";
@@ -28,6 +59,11 @@
     function updateTransaction($con, $id_transaksi, $tanggal, $id_jadwal, $username, $id_lapang, $total_bayar){
         $query = "UPDATE transaksi SET tanggal='$tanggal', id_jadwal='$id_jadwal', username='$username', id_lapang='$id_lapang', total_bayar='$total_bayar'
                     WHERE id_transaksi='$id_transaksi'";
+        mysqli_query($con, $query);
+    }
+
+    function deleteTransactionById($con, $id){
+        $query = "DELETE FROM transaksi WHERE id_transaksi='$id'";
         mysqli_query($con, $query);
     }
 ?>

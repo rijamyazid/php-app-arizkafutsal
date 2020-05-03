@@ -29,4 +29,10 @@
                 WHERE username='$username'";
         mysqli_query($con, $query);
     }
+
+    function updateUserSaldo($con, $username, $saldo){
+        $query = "UPDATE user SET saldo='$saldo'
+                WHERE username='$username'";
+        mysqli_query($con, $query);
+    }
 ?>

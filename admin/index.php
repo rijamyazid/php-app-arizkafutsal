@@ -16,30 +16,14 @@
             </div> -->
                 <div class="atas">
                     <nav class="kiri2">
-                            <div><a href="?hal=admin_beranda">BERANDA</a></div>
-                            <div><a href="?hal=kelola_akun">KELOLA AKUN</a></div>
-                            <div><a href="#wisata">KELOLA JADWAL</a></div>
-                            <div><a href="?hal=kelola_transaksi">KELOLA TRANSAKSI</a></div>
-                            <div><a href="#wisata">KELOLA PEMESANAN</a></div>
+                        <div><a href="?hal=admin_beranda">BERANDA</a></div>
+                        <div><a href="?hal=kelola_akun">KELOLA AKUN</a></div>
+                        <div><a href="?hal=kelola_jadwal_sintesis">KELOLA JADWAL SINTESIS</a></div>
+                        <div><a href="?hal=kelola_jadwal_vinyl">KELOLA JADWAL VINYL</a></div>
+                        <div><a href="?hal=kelola_transaksi">KELOLA TRANSAKSI</a></div>
                     </nav>
                     <nav class="kanan">
-                        <div class ="dropdown">
-                            <div><button>Menu</button></div>
-                            <ul>
-                                <li><a href="#">Profile</a></li>
-                                <li><a href="#">Riwayat Pmesanan</a></li>
-                                <li><a href="?hal=admin_logout">Logout</a></li>
-                            </ul>
-                        </div>
-                        <script
-                        src="https://code.jquery.com/jquery-3.4.1.js"></script>  
-                        <script type="text/javascript">
-                            $(document).ready(function(){
-                                $('button').click(function(){
-                                    $('ul').toggleClass('active')
-                                })
-                            })
-                        </script>
+                        <div><a href="?hal=admin_logout">Logout</a></div>
                     </nav>
                 </div>
         </header>
@@ -67,6 +51,21 @@
                         break;
                     case 'kelola_transaksi_tambah':
                         include "../code/admin_kelola_transaksi/kelola_transaksi_tambah.php";
+                        break;
+                    case 'kelola_transaksi_edit':
+                        include "../code/admin_kelola_transaksi/kelola_transaksi_edit.php";
+                        break;
+                    case 'kelola_transaksi_hapus':
+                        include "../code/admin_kelola_transaksi/kelola_transaksi_hapus.php";
+                        break;
+                    case 'kelola_jadwal_sintesis':
+                        include "../code/admin_kelola_jadwal/kelola_jadwal_sintesis.php";
+                        break;
+                    case 'kelola_jadwal_vinyl':
+                        include "../code/admin_kelola_jadwal/kelola_jadwal_vinyl.php";
+                        break;
+                    case 'kelola_jadwal_hapus':
+                        include "../code/admin_kelola_jadwal/kelola_jadwal_hapus.php";
                         break;
                     case 'admin_logout':
                         session_destroy();

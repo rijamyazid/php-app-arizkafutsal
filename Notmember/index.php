@@ -1,6 +1,7 @@
 <?php
     session_start();
     include "../code/koneksi.php";
+    include "../code/model/all_model.php";
     include "../code/universal_functions.php";
 ?>
 
