@@ -1,22 +1,18 @@
-<h3>Tambah Akun</h3>
-<form action="" method="POST">
-    <label for="username">Username</label><br>
-    <input type="text" name="username" id="username"><br>
-    <label for="nama">Nama Lengkap</label><br>
-    <input type="text" name="nama" id="nama"><br>
-    <label for="email">Email</label><br>
-    <input type="text" name="email" id="email"><br>
-    <label for="nohp">No. Hp</label><br>
-    <input type="text" name="nohp" id="nohp"><br>
-    <label for="saldo">Saldo</label><br>
-    <input type="number" name="saldo" id="saldo" value="0"><br>
-    <label for="password">Password</label><br>
-    <input type="password" name="password" id="password"><br>
-    <label for="kpassword">Konfirmasi Password</label><br>
-    <input type="password" name="kpassword" id="kpassword"><br>
-    <input type="submit" name="submit" value="Simpan">
-</form>
-
+<div class="kll">
+    <h3>Tambah Akun</h3>
+    <form action="" method="POST">
+        <pre>
+        <label for="nama">Nama Lengkap</label>        <input type="text" name="nama" id="nama"><br>
+        <label for="username">Username</label>            <input type="text" name="username" id="username"><br>
+        <label for="email">Email</label>               <input type="text" name="email" id="email"><br>
+        <label for="nohp">Kontak</label>              <input type="text" name="nohp" id="nohp"><br>
+        <label for="saldo">Saldo</label>               <input type="number" name="saldo" id="saldo" value="0"><br>
+        <label for="password">Password</label>            <input type="password" name="password" id="password"><br>
+        <label for="kpassword">Konfirmasi Password</label> <input type="password" name="kpassword" id="kpassword"><br>
+        <input type="submit" class="simpan"name="submit" value="Simpan"> <input type="reset" class="batal"name="submit" value="Batal">
+    </pre>
+    </form>
+</div>
 <?php
     if(isset($_POST['submit'])){
         if($_POST['password'] == $_POST['kpassword']){

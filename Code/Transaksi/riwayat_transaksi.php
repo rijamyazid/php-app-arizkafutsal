@@ -1,5 +1,5 @@
 
-        <div class="jdwl">
+        <div class="kll">
            <h1>Riwayat Transaksi</h1>
             <table border="1" width="1250px" class="tab">
                 <tr>

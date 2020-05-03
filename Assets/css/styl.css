@@ -209,7 +209,7 @@ ul.active{
 
 
 
-.jdwl{
+.jdwl,.kll,.kll1{
     margin : 50px auto;
     width : 1250px;
 }
@@ -341,3 +341,84 @@ font-size: 15px;
     min-height: 150px;
 }
 
+
+
+
+
+/* Kelola Kelola */
+.abu{
+    background: rgb(211, 210, 210);
+}
+.kll1 div, .kll div{
+    background:rgb(54, 228, 1);
+    padding: 2.5px;
+    cursor: pointer;
+    width: 130px;
+    text-align: center;
+}
+.kll1 div a, .kll div a{
+    text-decoration: none;
+    color: white;
+}
+a.ubah{
+    background:rgb(54, 228, 1);
+    text-decoration: none;
+    color:white;
+    padding: 4px;
+}
+a.hapus{
+    background:red;
+    text-decoration: none;
+    color:white;
+    padding: 4px;
+}
+.kll div:hover{
+    font-weight: bolder;
+}
+.kll1 div:hover{
+    font-weight: bolder;
+}
+a.hapus:hover{
+    font-weight: bolder;
+}
+a.ubah:hover{
+    font-weight: bolder;
+}
+.kll td{
+    height: 40px;
+    min-width: 200px;
+}
+.kll1 td{
+    height: 40px;
+    min-width: 175px;
+}
+
+
+.ubahtrans{
+    text-decoration: none;
+    color : white;
+    background: red;
+    padding: 4px;
+}
+.simpan{
+    background: rgb(60, 255, 42);
+    color: white;
+}
+.batal{
+    background: red;
+    color: white;
+}
+
+
+
+.kll-atas{
+    display: flex;
+    justify-content: space-between;
+}
+.kll .kll-atas{
+    width : 670px;
+    background: none;
+}
+pre{
+    font-size: 21px;
+}
