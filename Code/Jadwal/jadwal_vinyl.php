@@ -21,12 +21,12 @@
                 </div>
                 <div><label>Lapangan Vinyl</label></div>
                 <div class="carpes">
-                    <a href="">Cara Pesan ?</a>
+                    <a href=""></a>
                 </div>
             </div>
             <table border="1" width="1250px" class="tab">
-                <tr><th colspan="5"> Tanggal : <?= reverseDate($date) ?> </th></tr>
-                <tr>
+                <tr class="abu"><th colspan="5"> Tanggal : <?= reverseDate($date) ?> </th></tr>
+                <tr class="abu">
                     <th>Waktu</th>
                     <th>Harga</th>
                     <th>Status</th>
@@ -57,7 +57,7 @@
                                 if(isDateExpired($date, $jadwal['waktu'])){
                                     echo '<td>Expired</td>';
                                 } else {
-                                    echo '<td><a href="?hal=pesan&tanggal='.$date.'&idLapang=2&idJadwal='.$jadwal['id_jadwal'].'">Pesan</a></td>';
+                                    echo '<td><a class="ubah" href="?hal=pesan&tanggal='.$date.'&idLapang=2&idJadwal='.$jadwal['id_jadwal'].'">Pesan</a></td>';
                                 }
                             }
                             echo '</tr>';
@@ -72,7 +72,7 @@
                             if(isDateExpired($date, $jadwal['waktu'])){
                                 echo '<td>Expired</td>';
                             } else {
-                                echo '<td><a href="?hal=pesan&tanggal='.$date.'&idLapang=2&idJadwal='.$jadwal['id_jadwal'].'">Pesan</a></td>';
+                                echo '<td><a class="ubah" href="?hal=pesan&tanggal='.$date.'&idLapang=2&idJadwal='.$jadwal['id_jadwal'].'">Pesan</a></td>';
                             }
                             echo '</tr>';
                         }

@@ -2,7 +2,7 @@
         <div class="kll">
            <h1>Riwayat Transaksi</h1>
             <table border="1" width="1250px" class="tab">
-                <tr>
+                <tr class="abu">
                     <th>tanggal</th>
                     <th>Waktu</th>
                     <th>Lapangan</th>

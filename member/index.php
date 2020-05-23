@@ -19,7 +19,7 @@
             </div> -->
                 <div class="atas">
                     <nav class="kiri">
-                        
+                    <div><a href="?hal=beranda"><img  class="gmr" src="../Assets/img/logo.png" alt="logo"></a></div>    
                             <div><a href="?hal=beranda">BERANDA</a></div>
                             <div class ="dropdown">
                                 <div><a class="ini" href="#">JADWAL</a></div>
@@ -59,6 +59,7 @@
                             })
                         </script>
                     </nav>
+                    <div class="kosong"></div>
                 </div>
         </header>
         <main>
@@ -89,7 +90,7 @@
                         break;
                     case 'logout':
                         session_destroy();
-                        echo "<p>Anda sudah logout, anda akan dialihkan kelaman login</p>";
+                        echo "<div class='logout'><p>ANDA SUDAH LOGOUT, ANDA AKAN DIALIHKAN KEHALAMAN LOGIN!</p></div>";
                         echo "<meta http-equiv='refresh' content='2;url=../notmember/index.php'>";
                         break;
                     default:
@@ -102,17 +103,37 @@
            ?>
         </main>
         <footer>
-            <div class="bawah">
-                <div>
-                    <div class="bawahkiri">
-                        <img src="../Assets/img/ig.png" alt="Instagram">
-                        <a href="">@arizka_futsal</a>
+            <!-- <div class="bawah"> -->
+            <div>
+                    <div class="sosmed">
+                    <label>Follow Us</label>
                     </div>
                     <div class="bawahkiri">
-                        <img src="../Assets/img/twtr.png" alt="Twitter">
-                        <a href="">@arizka_futsal</a>
+                        <a href=""><img class="insta" src="../Assets/img/ig.png" alt="Instagram"></a>
+                    <!-- </div> -->
+                    <!-- <div class="bawahkiri"> -->
+                        <a href=""><img class="manuk" src="../Assets/img/twtr.png" alt="Twitter"></a>
                     </div>
                 </div>
+                <div class="logo2">
+                    <img class="logimg" src="../Assets/img/logo.png" alt="Logo!!!"><br>
+                    Powered by Kelompok 2<br><br>
+                    Ridwan Maulana Fatah<br>
+                    Muhammad Dzatul Kahfi <br>
+                    Muhammad Gema Almauludi<br>
+                    Rija Muhammad Yajid<br>
+                    Afmi Ruri<br>
+                    Nisa Singgih Lestari<br>
+                    Fitrizki Alunita<br>
+                    
+                </div>
+                <div class="peta">
+                    <div>
+                    <label>Lokasi</label>
+                    </div>
+                    <img src="../Assets/img/peta.jpg" alt="">
+                </div>
+            </div>
             </div>
         </footer>
     </body>

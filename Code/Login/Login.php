@@ -51,7 +51,7 @@
             <form method="post">
                 <div class="container">
                     <div class="logo">
-                        <img src="../Assets/img/logo.jfif" alt="logo">
+                        <img src="../Assets/img/logo.png" alt="logo">
                         <div class ="logotul">CEK JADWAL SEKARANG</div>
                     </div>
                     <div class="pem">

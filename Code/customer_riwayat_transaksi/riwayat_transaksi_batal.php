@@ -37,7 +37,7 @@
     if(isset($_POST['setuju']) && isset($_GET['id'])){
         updateUserSaldo($con, $user['username'], $user['saldo']+100000);
         deleteTransactionById($con, $transaction['id_transaksi']);
-        echo '<p>Pesanan berhasil dibatalkan</p>';
+        echo '<div class="popup"><p>Pesanan berhasil dibatalkan</p></div>';
         echo "<meta http-equiv='refresh' content='2;url=index.php?hal=riwayat_transaksi'>";
     }
 ?>

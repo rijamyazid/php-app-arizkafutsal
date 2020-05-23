@@ -6,7 +6,7 @@
         <div class="jdwl">
            <h1>Riwayat Transaksi</h1>
             <table border="1" width="1250px" class="tab">
-                <tr>
+                <tr class="abu">
                     <th>tanggal</th>
                     <th>Waktu</th>
                     <th>Lapangan</th>
@@ -20,7 +20,7 @@
                     <td><?= $transaction['waktu'] ?></td>
                     <td><?= getLapangById($con,$transaction['id_lapang'])['nama_lapang'] ?></td>
                     <?php if(!isDateExpired($transaction['tanggal'], $transaction['waktu'])) {
-                        echo '<td><a href="?hal=riwayat_transaksi_batal&id='.$transaction['id_transaksi'].'">Batalkan</a></td>';
+                        echo '<td><a class="batal" href="?hal=riwayat_transaksi_batal&id='.$transaction['id_transaksi'].'">Batalkan</a></td>';
                     } else {
                         echo '<td>Expired</td>';
                     }

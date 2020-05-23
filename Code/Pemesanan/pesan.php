@@ -47,10 +47,10 @@
                 $query = "UPDATE user SET saldo='$saldoReduced' WHERE username='$_SESSION[username]'";
                 $result = mysqli_query($con, $query);
 
-                echo '<p>Pemesanan berhasil, anda akan dialihkan ke beranda</p>';
+                echo '<div class="popup"><p>Pemesanan berhasil, anda akan dialihkan ke beranda</p></div>';
                 echo "<meta http-equiv='refresh' content='2;url=../member/index.php'>";
             } else {
-                echo '<p>Pemesanan gagal, saldo anda tidak cukup</p>';
+                echo '<div class="popup"><p>Pemesanan gagal, saldo anda tidak cukup</p></div>';
                 echo "<meta http-equiv='refresh' content='2;url=../member/index.php?hal=jadwal_sintesis'>";
             }
         } else if(isset($_POST['batal'])){

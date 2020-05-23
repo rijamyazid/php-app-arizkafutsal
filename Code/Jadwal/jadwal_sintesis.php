@@ -21,12 +21,12 @@
                 </div>
                 <div><label>Lapangan Sintesis</label></div>
                 <div class="carpes">
-                    <a href="">Cara Pesan ?</a>
+                    <a href=""></a>
                 </div>
             </div>
             <table border="1" width="1250px" class="tab">
-                <tr><th colspan="5"> Tanggal : <?= reverseDate($date) ?> </th></tr>
-                <tr>
+                <tr class="abu"><th colspan="5"> Tanggal : <?= reverseDate($date) ?> </th></tr>
+                <tr class="abu">
                     <th>Waktu</th>
                     <th>Harga</th>
                     <th>Status</th>
@@ -47,6 +47,7 @@
                                 }
                             }
                             if($dipesan){
+                                
                                 echo '<td style="background:red; color:white">DIPESAN</td>';
                                 echo '<td>Pemesan : '.getUserByUsername($con, $username)['nama'].'</td>';
                                 echo '<td>Dipesan</td>';
@@ -54,10 +55,11 @@
                             } else {
                                 echo '<td style=>TERSEDIA</td>';
                                 echo '<td>-</td>';
+                                // echo '<td><a class="ubah" href="?hal=pesan&tanggal='.$date.'&idLapang=1&idJadwal='.$jadwal['id_jadwal'].'">Pesan</a></td>';
                                 if(isDateExpired($date, $jadwal['waktu'])){
                                     echo '<td>Expired</td>';
                                 } else {
-                                    echo '<td><a href="?hal=pesan&tanggal='.$date.'&idLapang=1&idJadwal='.$jadwal['id_jadwal'].'">Pesan</a></td>';
+                                    echo '<td><a class="ubah" href="?hal=pesan&tanggal='.$date.'&idLapang=1&idJadwal='.$jadwal['id_jadwal'].'">Pesan</a></td>';
                                 }
                             }
                             echo '</tr>';
@@ -72,7 +74,7 @@
                             if(isDateExpired($date, $jadwal['waktu'])){
                                 echo '<td>Expired</td>';
                             } else {
-                                echo '<td><a href="?hal=pesan&tanggal='.$date.'&idLapang=1&idJadwal='.$jadwal['id_jadwal'].'">Pesan</a></td>';
+                                echo '<td><a class="ubah" href="?hal=pesan&tanggal='.$date.'&idLapang=1&idJadwal='.$jadwal['id_jadwal'].'">Pesan</a></td>';
                             }
                             echo '</tr>';
                         }
