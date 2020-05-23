@@ -13,9 +13,15 @@
         return  mysqli_fetch_array($result);
     }
 
-    function insertUser($con, $username, $nama, $email, $nohp, $saldo, $password){
-        $query = "INSERT INTO user (username, nama, email, no_hp, saldo, password) VALUES 
-                ('$username', '$nama', '$email', '$nohp', '$saldo', '$password')";
+    function insertUserReg($con, $username, $nama, $email, $saldo, $password){
+        $query = "INSERT INTO user (username, nama, email, saldo, password) VALUES 
+                ('$username', '$nama', '$email', '0', '$password')";
+        mysqli_query($con, $query);
+    }
+
+    function insertUser($con, $username, $nama, $email, $nohp, $saldo, $alamat, $password){
+        $query = "INSERT INTO user (username, nama, email, no_hp, saldo, alamat, password) VALUES 
+                ('$username', '$nama', '$email', '$nohp', '$saldo', '$alamat', '$password')";
         mysqli_query($con, $query);
     }
 
@@ -24,8 +30,8 @@
         mysqli_query($con, $query);
     }
 
-    function updateUser($con, $username, $nama, $email, $nohp, $saldo, $password){
-        $query = "UPDATE user SET nama='$nama', email='$email', no_hp='$nohp', saldo='$saldo', password='$password'
+    function updateUser($con, $username, $nama, $email, $nohp, $saldo, $alamat, $password){
+        $query = "UPDATE user SET nama='$nama', email='$email', no_hp='$nohp', saldo='$saldo', alamat='$alamat', password='$password'
                 WHERE username='$username'";
         mysqli_query($con, $query);
     }

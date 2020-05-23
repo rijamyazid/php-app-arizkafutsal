@@ -1,6 +1,9 @@
 <?php
     function toCurrency($currency){
         switch (strlen($currency)) {
+            case 1:
+                return "Rp. 0";
+                break;
             case 4:
                 $arr = str_split($currency, 1);
                 return "Rp. ".$arr[0].'.'.$arr[1].$arr[2].$arr[3];
@@ -14,6 +17,8 @@
                 return "Rp. ".$arr[0].'.'.$arr[1];
                 break;
             case 7:
+                $arr = str_split($currency, 1);
+                return "Rp. ".$arr[0].".".$arr[1].$arr[2].$arr[3].'.'.$arr[4].$arr[5].$arr[6];
                 break;
             default:
                 break;

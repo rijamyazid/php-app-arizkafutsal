@@ -54,10 +54,11 @@
                 echo "<meta http-equiv='refresh' content='2;url=../member/index.php?hal=jadwal_sintesis'>";
             }
         } else if(isset($_POST['batal'])){
-
-            echo '<p>Pemesanan dibatalkan, anda akan dialihkan ke daftar jadwal</p>';
-            echo "<meta http-equiv='refresh' content='2;url=../member/index.php?hal=jadwal_sintesis'>";
-
+            if($_GET['idLapang'] == 1){
+                header("Location: index.php?hal=jadwal_sintesis");
+            } else {
+                header("Location: index.php?hal=jadwal_vinyl");
+            }
         }
     }
 ?>
