@@ -19,9 +19,9 @@
         mysqli_query($con, $query);
     }
 
-    function insertUser($con, $username, $nama, $email, $nohp, $saldo, $alamat, $password){
-        $query = "INSERT INTO user (username, nama, email, no_hp, saldo, alamat, password) VALUES 
-                ('$username', '$nama', '$email', '$nohp', '$saldo', '$alamat', '$password')";
+    function insertUser($con, $foto, $username, $nama, $email, $nohp, $saldo, $alamat, $password){
+        $query = "INSERT INTO user (username, nama, email, no_hp, foto, saldo, alamat, password) VALUES 
+                ('$username', '$nama', '$email', '$nohp', '$foto', '$saldo', '$alamat', '$password')";
         mysqli_query($con, $query);
     }
 
@@ -30,8 +30,8 @@
         mysqli_query($con, $query);
     }
 
-    function updateUser($con, $username, $nama, $email, $nohp, $saldo, $alamat, $password){
-        $query = "UPDATE user SET nama='$nama', email='$email', no_hp='$nohp', saldo='$saldo', alamat='$alamat', password='$password'
+    function updateUser($con, $foto, $username, $nama, $email, $nohp, $saldo, $alamat, $password){
+        $query = "UPDATE user SET foto='$foto', nama='$nama', email='$email', no_hp='$nohp', saldo='$saldo', alamat='$alamat', password='$password'
                 WHERE username='$username'";
         mysqli_query($con, $query);
     }

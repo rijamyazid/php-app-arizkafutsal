@@ -77,7 +77,10 @@
                         include "../code/jadwal/jadwal_vinyl.php";
                         break;
                     case 'profile':
-                        include "../code/profile.php";
+                        include "../code/customer_profile/customer_profile.php";
+                        break;
+                    case 'customer_edit_profile':
+                        include "../code/customer_profile/customer_edit_profile.php";
                         break;
                     case 'pesan':
                         include "../code/pemesanan/pesan.php";

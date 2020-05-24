@@ -38,7 +38,7 @@
         <option value="">-Pilih Pembayaran-</option>
         <option value="100000" selected>Rp. 100.000</option>
     </select><br>
-    <input type="submit" class="simpan" name="submit" value="Pesan">
+    <input type="submit" class="simpan" name="submit" value="Ubah"> <input onclick="cancel()" type="reset" class="batal" name="submit" value="Batal">
 </form>
 </pre>
 </div>
@@ -48,3 +48,9 @@
         header("Location: ../admin/index.php?hal=kelola_transaksi");
     }
 ?>
+
+<script>
+function cancel() {
+    window.location.replace("index.php?hal=kelola_transaksi");
+}
+</script>

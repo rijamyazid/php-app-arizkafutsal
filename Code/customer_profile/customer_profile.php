@@ -13,10 +13,7 @@
         <div class="Prof">
             <div class="head">
                 <div class="ID">
-                    <img src="../Assets/img/user.png">
-                    <pre>
-                        <label><?= $data['username'] ?></label>
-                    </pre>
+                    <img src="../Assets/img/<?= $data['foto'] ?>" width="100">
                 </div>
                 <div>
                     <pre>
@@ -25,14 +22,15 @@
                     </pre>
                 </div>
             </div>
-            <a href="#"><pre>UBAH</pre></a>
+            <a href="?hal=customer_edit_profile&username=<?= $data['username'] ?>"><pre>UBAH</pre></a>
 
             <div class="datdir">
                 <pre>
-Nama   : <label><?= $data['nama'] ?></label>
-Email  : <label><?= $data['email'] ?></label>
-Kontak : <label>-</label>
-Alamat : <label>-</label>
+Username : <label><?= $data['username'] ?></label>
+Nama     : <label><?= $data['nama'] ?></label>
+Email    : <label><?= $data['email'] ?></label>
+Kontak   : <label><?php if(empty($data['no_hp'])) echo "-"; else echo $data['no_hp']; ?></label>
+Alamat   : <label><?php if(empty($data['alamat'])) echo "-"; else echo $data['alamat']; ?></label>
                 </pre>
             </div>
 
