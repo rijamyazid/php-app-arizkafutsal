@@ -43,48 +43,47 @@
         }
     }
 ?>
-<html>
-    <head>
-        <link rel="stylesheet" href="../Assets/css/log-daf.css">
-    </head>
-    <body>
-            <form method="post">
-                <div class="container">
-                    <div class="logo">
-                        <img src="../Assets/img/logo.png" alt="logo">
-                        <div class ="logotul">CEK JADWAL SEKARANG</div>
-                    </div>
-                    <div class="pem">
-                        <div class="daf">
-                            <h2>LOGIN</h2>
-                            <div class="box">
-                                <label for="username"></label>
-                                <input type="text" name="username" placeholder="Username" <?php if(isset($_COOKIE["user_login"])) { ?> value="<?= $_COOKIE["user_login"] ?>" <?php } ?>><br>
-                            </div>
-                            <div class="box">
-                                <label for="password"></label>
-                                <input type="password" name="password" placeholder="Password" <?php if(isset($_COOKIE["user_login"])) { ?> value="<?= $_COOKIE["ps_login"] ?>" <?php } ?>><br>
-                            </div>
-                            <div class="box1">
-                                <div class="cb">
-                                <input type="checkbox" name="remember" id="remember" <?php if(isset($_COOKIE["user_login"])) { ?> checked <?php } ?> />
-                                </div>
-                                <div>
-                                <label for="remember-me">Remember me</label><br>
-                                </div>
-                            </div>
-                            <div class="btn-log">
-                                <?= $message ?><br>
-                                <input type="submit" name="login" value="LOGIN">
-                            </div>
-                            <div class="foot">
-                                <div class=df>
-                                <a href="?hal=buat_akun">Buat Akun</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+<div class="row d-flex justify-content-center align-items-center">
+    <div class="col-md-7">
+        <div class="row">
+            <div class="col d-flex justify-content-center align-items-center">
+                <img width="300px" src="../Assets/img/logo.png" alt="logo">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col text-center">
+                <p class="h3">CEK JADWAL SEKARANG</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md">
+    <form method="post">
+        <div class="card bg-dark text-light">
+            <div class="card-body px-5">
+                <h2 class="text-center">LOGIN</h2>
+                <div class="form-group row">
+                    <label for="username">Username</label>
+                    <input type="text" class="form-control" name="username" placeholder="Username" <?php if(isset($_COOKIE["user_login"])) { ?> value="<?= $_COOKIE["user_login"] ?>" <?php } ?>><br>
                 </div>
-            </form>
-        </body>
-</html>
+                <div class="form-group row">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" name="password" placeholder="Password" <?php if(isset($_COOKIE["user_login"])) { ?> value="<?= $_COOKIE["ps_login"] ?>" <?php } ?>><br>
+                </div>
+                <div class="form-check row mb-2">
+                    <input type="checkbox" class="form-check-input" name="remember" id="remember" <?php if(isset($_COOKIE["user_login"])) { ?> checked <?php } ?> />
+                    <label class="form-check-label" for="remember">Remember Me</label><br>
+                </div>
+                <div class="form-group row">
+                    <input type="submit" class="btn btn-primary btn-block" name="login" value="Login">
+                </div>
+                <div class="form-group row">
+                    <a href="?hal=buat_akun" class="btn btn-success btn-block" >Buat Akun</a>
+                </div>
+            </div>
+        </div>
+    </form>
+    </div>
+    <div class="col-md-1">
+
+    </div>
+</div>

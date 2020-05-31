@@ -30,7 +30,7 @@
                 && !empty(trim($_POST['username']))
                 && !empty(trim($_POST['email']))
                 && !empty(trim($_POST['password']))){
-                    updateUser($con, 'user.png', $_POST['username'], $_POST['nama'], $_POST['email'], $_POST['nohp'], $user['saldo'], $_POST['alamat'], $_POST['password']);
+                    updateUser($con, $user['foto'], $_POST['username'], $_POST['nama'], $_POST['email'], $_POST['nohp'], $user['saldo'], $_POST['alamat'], $_POST['password']);
                     header("Location: index.php?hal=profile");
             } else {
                 echo "<p>Field tidak boleh ada yang kosong</p>";
@@ -44,7 +44,7 @@
     </div>
 <pre><form id="form" action="" method="POST">
 <label for="foto">Foto</label>          <input type="file" id="foto" name="foto">
-<img src="../Assets/img/<?= $user['foto'] ?>" width="100"><br>
+<img src="../assets/img/<?= $user['foto'] ?>" width="100"><br>
 <label for="username">Username</label>      <input type="text" maxlength="20" name="username" id="username" value="<?= $user['username'] ?>" readonly><br>
 <label for="nama">Nama Lengkap</label>  <input type="text" maxlength="20" name="nama" id="nama" value="<?= $user['nama'] ?>" required><br>
 <label for="email">Email</label>         <input type="email" maxlength="30" name="email" id="email" value="<?= $user['email'] ?>" required><br>

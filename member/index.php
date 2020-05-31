@@ -5,6 +5,8 @@
     include "../code/koneksi.php";
     include "../code/model/all_model.php";
     include "../code/universal_functions.php";
+    
+    if(isset($_SESSION['username'])){
 ?>
 
 <html>
@@ -141,3 +143,9 @@
         </footer>
     </body>
 </html>
+
+<?php
+    } else {
+        echo '<script> window.location.replace("index.php"); </script>';
+    }
+?>

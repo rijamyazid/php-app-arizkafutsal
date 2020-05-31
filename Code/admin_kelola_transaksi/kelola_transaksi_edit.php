@@ -44,7 +44,7 @@
 </div>
 <?php
     if(isset($_POST['submit'])){
-        insertTransaction($con, $_POST['tanggal'], $_POST['waktu'], $_POST['nama'], $_POST['jl'], $_POST['tb']);
+        updateTransaction($con, $transaksi['id_transaksi'], $_POST['tanggal'], $_POST['waktu'], $_POST['nama'], $_POST['jl'], $_POST['tb']);
         header("Location: ../admin/index.php?hal=kelola_transaksi");
     }
 ?>
