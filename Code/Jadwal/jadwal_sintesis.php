@@ -10,7 +10,7 @@
         $transactions = getTransactionsByDate($con, date("Y-m-d"));
     }
 ?>
-<div class="container-fluid px-5">
+<div class="container-fluid">
     <div class="row">
         <div class="tgl">
         <form action="" method="POST">
@@ -25,14 +25,14 @@
     </div>
     <div class="row">
         <div class="table-responsive">
-            <table class="table table-bordered table-hover">
+            <table class="table table-bordered table-hover text-center">
                 <thead class="thead-dark">
                     <tr class="abu"><th scope="col" colspan="5"> Tanggal : <?= reverseDate($date) ?> </th></tr>
                     <tr class="abu">
                         <th scope="col">Waktu</th>
                         <th scope="col">Harga</th>
                         <th scope="col">Status</th>
-                        <th scope="col">Keterangan</th>
+                        <th width="30%" scope="col">Keterangan</th>
                         <th scope="col">Pesan</th>
                     </tr>
                 </thead>
@@ -41,8 +41,8 @@
                         if(mysqli_num_rows($transactions) > 0){ // Jika ditemukan pemesanan pada tanggal yang dicari
                             foreach ($jadwals as $jadwal){
                                 echo '<tr>';
-                                echo '<td>'.$jadwal['waktu'].'</td>';
-                                echo '<td>'.toCurrency($jadwal['harga']).'</td>';
+                                echo '<td class="align-middle">'.$jadwal['waktu'].'</td>';
+                                echo '<td class="align-middle">'.toCurrency($jadwal['harga']).'</td>';
                                 foreach($transactions as $transaction) {
                                     if($transaction['id_lapang'] == 1 && $jadwal['id_jadwal'] == $transaction['id_jadwal']){
                                         $dipesan = true;
@@ -52,18 +52,18 @@
                                 }
                                 if($dipesan){
                                     
-                                    echo '<td style="background:red; color:white">DIPESAN</td>';
-                                    echo '<td>Pemesan : '.getUserByUsername($con, $username)['nama'].'</td>';
-                                    echo '<td>Dipesan</td>';
+                                    echo '<td class="align-middle" style="background:red; color:white">DIPESAN</td>';
+                                    echo '<td class="align-middle">Pemesan : '.getUserByUsername($con, $username)['nama'].'</td>';
+                                    echo '<td class="align-middle">Dipesan</td>';
                                     $dipesan = false;
                                 } else {
-                                    echo '<td style=>TERSEDIA</td>';
-                                    echo '<td>-</td>';
+                                    echo '<td class="align-middle" style=>TERSEDIA</td>';
+                                    echo '<td class="align-middle">-</td>';
                                     // echo '<td><a class="ubah" href="?hal=pesan&tanggal='.$date.'&idLapang=1&idJadwal='.$jadwal['id_jadwal'].'">Pesan</a></td>';
                                     if(isDateExpired($date, $jadwal['waktu'])){
-                                        echo '<td>Expired</td>';
+                                        echo '<td class="align-middle">Expired</td>';
                                     } else {
-                                        echo '<td><a class="btn btn-success" href="?hal=pesan&tanggal='.$date.'&idLapang=1&idJadwal='.$jadwal['id_jadwal'].'">Pesan</a></td>';
+                                        echo '<td class="align-middle"><a class="btn btn-success" href="?hal=pesan&tanggal='.$date.'&idLapang=1&idJadwal='.$jadwal['id_jadwal'].'">Pesan</a></td>';
                                     }
                                 }
                                 echo '</tr>';
@@ -71,14 +71,14 @@
                         } else { // Jika tidak ditemukan pemesanan pada tanggal yang dicari
                             foreach($jadwals as $jadwal){
                                 echo '<tr>';
-                                echo '<td>'.$jadwal['waktu'].'</td>';
-                                echo '<td>'.toCurrency($jadwal['harga']).'</td>';
-                                echo '<td>TERSEDIA</td>';
-                                echo '<td>-</td>';
+                                echo '<td class="align-middle">'.$jadwal['waktu'].'</td>';
+                                echo '<td class="align-middle">'.toCurrency($jadwal['harga']).'</td>';
+                                echo '<td class="align-middle">TERSEDIA</td>';
+                                echo '<td class="align-middle">-</td>';
                                 if(isDateExpired($date, $jadwal['waktu'])){
-                                    echo '<td>Expired</td>';
+                                    echo '<td class="align-middle">Expired</td>';
                                 } else {
-                                    echo '<td><a class="btn btn-success" href="?hal=pesan&tanggal='.$date.'&idLapang=1&idJadwal='.$jadwal['id_jadwal'].'">Pesan</a></td>';
+                                    echo '<td class="align-middle"><a class="btn btn-success" href="?hal=pesan&tanggal='.$date.'&idLapang=1&idJadwal='.$jadwal['id_jadwal'].'">Pesan</a></td>';
                                 }
                                 echo '</tr>';
                             }

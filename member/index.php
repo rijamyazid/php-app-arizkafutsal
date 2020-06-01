@@ -11,8 +11,8 @@
 
 <html>
     <head>
-        <link rel="stylesheet" href="../assets/css/styl.css">
-        <link rel="stylesheet" href="../assets/css/log-daf.css">
+        <!-- <link rel="stylesheet" href="../assets/css/styl.css"> -->
+        <!-- <link rel="stylesheet" href="../assets/css/log-daf.css"> -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -103,10 +103,10 @@
                     </div>
                     <hr class="bg-light">
                     <div class="row d-flex justify-content-center align-items-center">
-                        <a href=""><img class="insta" src="../assets/img/ig.png" alt="Instagram"></a>
+                        <a href=""><img width="80px" src="../assets/img/ig.png" alt="Instagram"></a>
                         <!-- </div> -->
                         <!-- <div class="bawahkiri"> -->
-                        <a href=""><img class="manuk" src="../assets/img/twtr.png" alt="Twitter"></a>
+                        <a href=""><img width="100px" src="../assets/img/twtr.png" alt="Twitter"></a>
                     </div>
                 </div>
                 <div class="col-md-4">

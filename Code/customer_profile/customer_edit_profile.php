@@ -38,22 +38,65 @@
         }
     }
 ?>
-<div class="kll">
-    <div class="kll-atas">
-    <h3>Ubah Akun</h3>
+<div class="container-fluid">
+    <h2 class="mb-3">Ubah Akun</h2>
+    <div class="card">
+        <div class="card-body px-5">
+            <form id="form" action="" method="POST" enctype="multipart/form-data">    
+                <div class="form-group row">
+                    <label for="foto" class="col-sm-2 col-form-label">Foto</label>
+                    <div class="col-sm-3">
+                        <input class="form-control-file" type="file" id="foto" name="foto">
+                    </div>
+                </div>
+                <img class="img-thumbnail" src="../assets/img/<?= $user['foto'] ?>" width="20%">
+                <div class="form-group row">
+                    <label for="username" class="col-sm-2 col-form-label">Username</label>
+                    <div class="col-sm-10">
+                        <input class="form-control-plaintext" type="text" maxlength="20" name="username" id="username" value="<?= $user['username'] ?>" readonly>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="nama" class="col-sm-2 col-form-label">Nama Lengkap</label>
+                    <div class="col-sm-10">
+                        <input class="form-control" type="text" maxlength="20" name="nama" id="nama" value="<?= $user['nama'] ?>" required>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="email" class="col-sm-2 col-form-label">Email</label>
+                    <div class="col-sm-10">
+                        <input class="form-control" type="email" maxlength="30" name="email" id="email" value="<?= $user['email'] ?>" required>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="nohp" class="col-sm-2 col-form-label">No. Hp</label>
+                    <div class="col-sm-10">
+                        <input class="form-control" type="number" maxlength="12" name="nohp" id="nohp" value="<?= $user['no_hp'] ?>">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="form" class="col-sm-2 col-form-label">Alamat (KTP)</label>
+                    <div class="col-sm-10">
+                        <textarea class="form-control" form="form" name="alamat"><?= $user['alamat'] ?></textarea>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="password" class="col-sm-2 col-form-label">Password</label>
+                    <div class="col-sm-10">
+                        <input class="form-control" type="text" maxlength="20" name="password" id="password" value="<?= $user['password'] ?>" required>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-md-2">
+                        <input onclick="cancel()" type="reset" class="btn btn-danger btn-block" name="submit" value="Batal">
+                    </div>
+                    <div class="col-md-2">
+                        <input type="submit" class="btn btn-primary btn-block" name="submit" value="Simpan">
+                    </div>
+                </div>
+            </form>
+        </div>
     </div>
-<pre><form id="form" action="" method="POST" enctype="multipart/form-data">
-<label for="foto">Foto</label>          <input type="file" id="foto" name="foto">
-<img src="../Assets/img/<?= $user['foto'] ?>" width="100"><br>
-<label for="username">Username</label>      <input type="text" maxlength="20" name="username" id="username" value="<?= $user['username'] ?>" readonly><br>
-<label for="nama">Nama Lengkap</label>  <input type="text" maxlength="20" name="nama" id="nama" value="<?= $user['nama'] ?>" required><br>
-<label for="email">Email</label>         <input type="email" maxlength="30" name="email" id="email" value="<?= $user['email'] ?>" required><br>
-<label for="nohp">No. Hp</label>        <input type="number" maxlength="12" name="nohp" id="nohp" value="<?= $user['no_hp'] ?>"><br>
-<label for="alamat">Alamat (KTP)</label>  <textarea form="form" name="alamat"><?= $user['alamat'] ?></textarea><br>
-<label for="password">Password</label>      <input type="text" maxlength="20" name="password" id="password" value="<?= $user['password'] ?>" required><br>
-              <input type="submit" class="simpan"name="submit" value="Simpan"> <input onclick="cancel()" type="reset" class="batal"name="submit" value="Batal">
-    </form>
-</pre>
 </div>
 
 <script>
