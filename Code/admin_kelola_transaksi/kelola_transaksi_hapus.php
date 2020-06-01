@@ -18,24 +18,58 @@
     }
 ?>
 
-<div class="psn">
-    <div class="kotakpesan">
-        <h3>KONFIRMASI HAPUS TRANSAKSI</h3>
-        <pre>
-            Apakah Anda ingin menghapus pemesanan dibawah ini ?
-            Lapangan    : <?php if(!$valid) echo "Tidak ada transaksi"; else echo getLapangById($con, $transaction['id_lapang'])['nama_lapang'] ?><br>
-            Tanggal     : <?php if(!$valid) echo "Tidak ada transaksi"; else echo reverseDate($transaction['tanggal']) ?><br>
-            Waktu       : <?php if(!$valid) echo "Tidak ada transaksi"; else echo $transaction['waktu'] ?><br>
-            Pemesan     : <?php if(!$valid) echo "Tidak ada transaksi"; else echo $user['nama'] ?>
-        </pre>
-        <div>
-        <form action="" method="POST">
-            <input type="submit" class="ijo" name="setuju" value="Hapus">
-            <input onclick="cancel()" type="reset" class="merah" name="batal" value="Batalkan">
-        </form>
-        </div
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h3>Konfirmasi Hapus Transaksi</h3>
+        </div>
     </div>
-
+    <div class="row">
+        <div class="col">
+            <label>Saldo Pemesan : <?= toCurrency($user['saldo']) ?></label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="card">
+                <div class="card-body px-5">
+                <h3 class="card-title">Apakah Anda ingin menghapus pemesanan dibawah ini ?</h3>
+                    <div class="table-responsive">
+                        <table class="table">
+                            <tbody>
+                                <tr>
+                                    <th width="15%" scope="row"><p class="card-text">Lapangan</p></th>
+                                    <td width="5%">:</td>
+                                    <td width="80%"><p class="card-text"><?php if(!$valid) echo "Tidak ada transaksi"; else echo getLapangById($con, $transaction['id_lapang'])['nama_lapang'] ?></p></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><p class="card-text">Tanggal</p></th>
+                                    <td>:</td>
+                                    <td><p class="card-text"><?php if(!$valid) echo "Tidak ada transaksi"; else echo reverseDate($transaction['tanggal']) ?><br></p></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><p class="card-text">Waktu</p></th>
+                                    <td>:</td>
+                                    <td><p class="card-text"><?php if(!$valid) echo "Tidak ada transaksi"; else echo $transaction['waktu'] ?></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><p class="card-text">Pemesan</p></th>
+                                    <td>:</td>
+                                    <td><p class="card-text"><?php if(!$valid) echo "Tidak ada transaksi"; else echo $user['nama'] ?></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="card-footer d-flex justify-content-end">
+                <form action="" method="POST">
+                    <input class="btn btn-danger" onclick="cancel()" type="reset" class="merah" name="batal" value="Batal">
+                    <input class="btn btn-success" type="submit" class="ijo" name="setuju" value="Konfirmasi">
+                </form>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 

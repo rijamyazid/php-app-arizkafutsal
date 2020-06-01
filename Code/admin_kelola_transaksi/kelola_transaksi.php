@@ -1,36 +1,46 @@
 <?php
     $transactions = getAllTransactions($con);
 ?>
-<div class="kll1">
-<h3>Kelola Transaksi</h3>
-<div class="atastab">
-    <div><a href="?hal=kelola_transaksi_tambah">Tambah Transaksi</a></div>
-</div>
-<table border=1>
-    <tr class="abu">
-        <th>ID Transaksi</th>
-        <th>Tanggal</th>
-        <th>Waktu</th>
-        <th>Jenis Lapangan</th>
-        <th>Pemesan</th>
-        <th>Total Bayar</th>
-        <th>Pilihan</th>
-    </tr>
-    <?php
-        foreach($transactions as $transaksi){
-            echo '<tr>';
-            echo    '<td>'.$transaksi['id_transaksi'].'</td>';
-            echo    '<td>'.$transaksi['tanggal'].'</td>';
-            echo    '<td>'.$transaksi['waktu'].'</td>';
-            echo    '<td>'.$transaksi['id_lapang'].'</td>';
-            echo    '<td>'.$transaksi['nama'].'</td>';
-            echo    '<td>'.toCurrency($transaksi['total_bayar']).'</td>';
-            echo    '<td>
-                        <a class="ubah" href="?hal=kelola_transaksi_edit&id='.$transaksi['id_transaksi'].'&username='.$transaksi['id_transaksi'].'">Ubah</a>
-                        <a class="hapus" href="?hal=kelola_transaksi_hapus&id='.$transaksi['id_transaksi'].'">Hapus</a>
-                    </td>';
-            echo '</tr>';
-        }
-    ?>
-</table>
-</div>
+<div class="container">
+    <div class="row">
+        <div><h1>Kelola Transaksi</h1></div>
+    </div>
+    <div class="row mb-3">
+        <div><a class="btn btn-success" href="?hal=kelola_transaksi_tambah">Tambah Transaksi</a></div>
+    </div>
+    <div class="row">
+        <div class="table-responsive">
+            <table class="table table-bordered table-hover text-center">
+                <thead class="thead-dark">
+                    <tr class="abu">
+                        <th>ID Transaksi</th>
+                        <th>Tanggal</th>
+                        <th>Waktu</th>
+                        <th>Jenis Lapangan</th>
+                        <th>Pemesan</th>
+                        <th>Total Bayar</th>
+                        <th>Pilihan</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php 
+                        foreach ($transactions as $transaction) {
+                            echo '<tr>';
+                            echo    '<td class="align-middle">'.$transaction['id_transaksi'].'</td>';
+                            echo    '<td class="align-middle">'.$transaction['tanggal'].'</td>';
+                            echo    '<td class="align-middle">'.$transaction['waktu'].'</td>';
+                            echo    '<td class="align-middle">'.$transaction['id_lapang'].'</td>';
+                            echo    '<td class="align-middle">'.$transaction['nama'].'</td>';
+                            echo    '<td class="align-middle">'.toCurrency($transaction['total_bayar']).'</td>';
+                            echo    '<td class="align-middle">
+                                        <a class="btn btn-danger" href="?hal=kelola_transaksi_hapus&id='.$transaction['id_transaksi'].'">Hapus</a>
+                                        <a class="btn btn-primary" href="?hal=kelola_transaksi_edit&id='.$transaction['id_transaksi'].'&username='.$transaction['id_transaksi'].'">Ubah</a>
+                                    </td>';
+                            echo '</tr>';
+                        }
+                    ?>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>  
