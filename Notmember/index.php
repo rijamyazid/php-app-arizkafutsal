@@ -70,12 +70,13 @@
         </div>
         <hr>
         <div class="container-fluid bg-dark p-4">
-        <hr class="bg-light">
             <div class="row">
                 <div class="col-md-4 text-light">
+                    <hr class="bg-light">
                     <div class="row d-flex justify-content-center align-items-center">
                         <p class="h5">Follow Us</p>
                     </div>
+                    <hr class="bg-light">
                     <div class="row d-flex justify-content-center align-items-center">
                         <a href=""><img class="insta" src="../assets/img/ig.png" alt="Instagram"></a>
                         <!-- </div> -->
@@ -110,9 +111,11 @@
                     </div>
                 </div>
                 <div class="col-md-4 text-light">
+                    <hr class="bg-light">
                     <div class="row d-flex justify-content-center align-items-center">
                         <p class="h5">Lokasi</p>
                     </div>
+                    <hr class="bg-light">
                     <div class="row d-flex justify-content-center align-items-center">
                         <a href="https://www.google.co.id/maps/place/Arizka+Futsal/@-6.886844,107.5199523,17z/data=!3m1!4b1!4m5!3m4!1s0x2e68e4fe93928d55:0xeee1103ac56d8c3f!8m2!3d-6.886844!4d107.522141">
                             <img width="400px" src="../assets/img/peta.jpg" alt="">
